@@ -17,7 +17,7 @@ module.exports = {
   indentation: 2,
   // Indentation of the catalog files
 
-  keepRemoved: false,
+  keepRemoved: true,
   // Keep keys from the catalog that are no longer in code
 
   keySeparator: '.',
@@ -128,7 +128,17 @@ module.exports = {
   // Plural separator used in your translation keys
   // If you want to use plain english keys, separators such as `_` might conflict. You might want to set `pluralSeparator` to a different string that does not occur in your keys.
 
-  input: ['app/**/*.js', 'client/**/*.js', 'definition/**/*.js', 'ee/**/*.js', 'imports/**/*.js', 'packages/**/*.js', 'private/**/*.js', 'public/**/*.js', 'server/**/*.js'],
+  input: [
+    'app/**/*.{js,html,jsx,tsx}',
+    'client/**/*.{js,html,jsx,tsx}',
+    'definition/**/*.{js,html,jsx,tsx}',
+    'ee/**/*.{js,html,jsx,tsx}',
+    'imports/**/*.{js,html,jsx,tsx}',
+    'packages/**/*.{js,html,jsx,tsx}',
+    'private/**/*.{js,html,jsx,tsx}',
+    'public/**/*.{js,html,jsx,tsx}',
+    'server/**/*.{js,html,jsx,tsx}'
+  ],
   // An array of globs that describe where to look for source files
   // relative to the location of the configuration file
 
