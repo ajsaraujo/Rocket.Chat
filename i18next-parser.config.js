@@ -137,12 +137,13 @@ module.exports = {
     'packages/**/*.{js,html,jsx,tsx}',
     'private/**/*.{js,html,jsx,tsx}',
     'public/**/*.{js,html,jsx,tsx}',
-    'server/**/*.{js,html,jsx,tsx}'
+    'server/**/*.{js,html,jsx,tsx}',
+    'test/**/*.{js,html,jsx,tsx}'
   ],
   // An array of globs that describe where to look for source files
   // relative to the location of the configuration file
 
-  sort: false,
+  sort: true,
   // Whether or not to sort the catalog
 
   skipDefaultValues: false,
