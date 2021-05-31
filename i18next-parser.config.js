@@ -1,6 +1,10 @@
 // i18next-parser.config.js
 
 module.exports = {
+  functions: ['t', '_', 'TAPi18n.__'],
+  namespace: 'client',
+  writeOld: false,
+
   contextSeparator: '_',
   // Key separator used in your translation keys
 
