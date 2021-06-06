@@ -1,7 +1,6 @@
 // i18next-parser.config.js
 
 module.exports = {
-  functions: ['t', '_', 'TAPi18n.__'],
   namespace: 'client',
   writeOld: false,
 
@@ -37,10 +36,19 @@ module.exports = {
     html: ['HTMLLexer'],
 
     mjs: ['JavascriptLexer'],
-    js: ['JavascriptLexer'], // if you're writing jsx inside .js files, change this to JsxLexer
-    ts: ['JavascriptLexer'],
-    jsx: ['JsxLexer'],
-    tsx: ['JsxLexer'],
+    
+    js: [{
+      lexer: 'JavascriptLexer',
+      functions:['t', 'TAPi18n.__', '__']
+    }], // if you're writing jsx inside .js files, change this to JsxLexer
+
+    ts: [{
+      lexer: 'JavascriptLexer',
+      functions: ['t', 'TAPi18n.__', '__']
+    }],
+
+    jsx: [{ lexer: 'JsxLexer', functions: ['t', 'TAPi18n.__', '__']}],
+    tsx: [{ lexer: 'JsxLexer', functions: ['t', 'TAPi18n.__', '__']}],
 
     default: ['JavascriptLexer']
   },
@@ -133,16 +141,16 @@ module.exports = {
   // If you want to use plain english keys, separators such as `_` might conflict. You might want to set `pluralSeparator` to a different string that does not occur in your keys.
 
   input: [
-    'app/**/*.{js,html,jsx,tsx}',
-    'client/**/*.{js,html,jsx,tsx}',
-    'definition/**/*.{js,html,jsx,tsx}',
-    'ee/**/*.{js,html,jsx,tsx}',
-    'imports/**/*.{js,html,jsx,tsx}',
-    'packages/**/*.{js,html,jsx,tsx}',
-    'private/**/*.{js,html,jsx,tsx}',
-    'public/**/*.{js,html,jsx,tsx}',
-    'server/**/*.{js,html,jsx,tsx}',
-    'test/**/*.{js,html,jsx,tsx}'
+    'app/**/*.{js,html,jsx,tsx,ts}',
+    'client/**/*.{js,html,jsx,tsx,ts}',
+    'definition/**/*.{js,html,jsx,tsx,ts}',
+    'ee/**/*.{js,html,jsx,tsx,ts}',
+    'imports/**/*.{js,html,jsx,tsx,ts}',
+    'packages/**/*.{js,html,jsx,tsx,ts}',
+    'private/**/*.{js,html,jsx,tsx,ts}',
+    'public/**/*.{js,html,jsx,tsx,ts}',
+    'server/**/*.{js,html,jsx,tsx,ts}',
+    'test/**/*.{js,html,jsx,tsx,ts}'
   ],
   // An array of globs that describe where to look for source files
   // relative to the location of the configuration file
